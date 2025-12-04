@@ -12,9 +12,9 @@ public class App {
 
     public static void imprimeTabla(int array[]) {
         repeatBorde("┌────────", "┬─────", "┐", array.length);
-        repeatIndice("│ Indice ", "│%4s ", "│", array);
+        repeatIndice("│ Indice ", "│%4d ", "│", array);
         repeatBorde("├────────", "┼─────", "┤", array.length);
-        repeatContenido("│ Valor  ", "│%4s ", "│",array);
+        repeatContenido("│ Valor  ", "│%4d ", "│",array);
         repeatBorde("└────────", "┴─────", "┘", array.length);
     }
 
