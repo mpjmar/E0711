@@ -11,30 +11,32 @@ public class App {
     }
 
     public static void imprimeTabla(int array[]) {
-        System.out.print("┌────────");
-        for (int i = 0; i < array.length; i++)
-            System.out.print("┬─────");
-        System.out.println("┐");
+        repeatBorde("┌────────", "┬─────", "┐", array.length);
+        repeatIndice("│ Indice ", "│%4s ", "│", array);
+        repeatBorde("├────────", "┼─────", "┤", array.length);
+        repeatContenido("│ Valor  ", "│%4s ", "│",array);
+        repeatBorde("└────────", "┴─────", "┘", array.length);
+    }
 
-        System.out.print("│ Indice ");
-        for (int i = 0; i < array.length; i++)
-            System.out.printf("│%4s ", i);
-        System.out.println("│");
+    public static void repeatBorde(String izq, String centro, String dcha, int len) {
+        System.out.print(izq);
+        for (int i = 0; i < len; i++)
+            System.out.print(centro);
+        System.out.println(dcha);
+    }
 
-        System.out.print("├────────");
+    public static void repeatIndice(String izq, String centro, String dcha, int array[]) {
+        System.out.print(izq);
         for (int i = 0; i < array.length; i++)
-            System.out.print("┼─────");
-        System.out.println("┤");
+            System.out.printf(centro, i + 1);
+        System.out.println(dcha);
+    }
 
-        System.out.print("│ Valor  ");
+    public static void repeatContenido(String izq, String centro, String dcha, int array[]) {
+        System.out.print(izq);
         for (int i = 0; i < array.length; i++)
-            System.out.printf("│%4s ", array[i]);
-        System.out.println("│");
-
-        System.out.print("└────────");
-        for (int i = 0; i < array.length; i++)
-            System.out.print("┴─────");
-        System.out.println("┘");
+            System.out.printf(centro, array[i]);
+        System.out.println(dcha);
     }
 
     public static int[] desplazaPrimos(int numeros[]) {
